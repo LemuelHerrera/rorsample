@@ -23,3 +23,11 @@ Things you may want to cover:
 
 * ...
 # rorsample
+
+# Installing bootstrap (latest version) as bundle instead of CDN links
+
+yarn add bootstrap jquery popper.js
+yarn add @popperjs/core
+
+* follow the video below
+https://www.youtube.com/watch?v=P630Sxm5Ey8
