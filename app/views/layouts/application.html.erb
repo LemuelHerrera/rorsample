@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rorsample</title>
+    <title>RorSample</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= controller_name %> <%= action_name%>">
+    <%= render 'layouts/header' %>
+    <div class='container-fluid'>
+      <% flash.each do |key, value| %>
+        <div class='alert alert-<%= key %> col-md-8 col-md-offset-2 main'> <%= value %> </div>
+      <% end %>
+      <div class='row'>
+        <%= yield :sidebar %>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
+
 </html>
