@@ -1,2 +1,9 @@
 <h1>Hello</h1>
-<p>This is index page</p>
+<p>This is index page 
+	<% if @hasD != nil %>
+		<%=@my_hash.values.first%>
+	<% else %>
+		Key 'D' does not exists.
+	<% end %>
+
+</p>
